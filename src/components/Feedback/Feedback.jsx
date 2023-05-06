@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import css from "./Feedback.module.css"
 
 class Feedback extends Component{
 state = {
@@ -7,19 +8,54 @@ state = {
     bad: 0
 }
 
-handleClickButton = (event) => {
-console.log(event.target);
+handleClickButtonGood = (event) => {
+//console.log(event.target);
+this.setState((prevState) => ({
+    good: prevState.good + 1,
+}))
+console.log(this.state.good);
 }
+
+
+
+handleClickButtonNeutral = (event) => {
+      //  console.log(event.target);
+        this.setState((prevState) => ({
+            neutral: prevState.neutral + 1,
+        }))
+        console.log(this.state.neutral);
+        }
+
+handleClickButtonBad = (event) => {
+            //console.log(event.target);
+            this.setState((prevState) => ({
+                bad: prevState.bad + 1,
+            }))
+            console.log(this.state.bad);
+            }
 
 render () {
     return (
         <div>
             <p>Please leave feedback</p>
-            <button type="button" onClick={this.handleClickButton}>Good</button>
-            <button type="button" onClick={this.handleClickButton}>Neutral</button>
-            <button type="button" onClick={this.handleClickButton}>Bad</button>
-        </div>
-    )
+            <button type="button" onClick={this.handleClickButtonGood}>Good</button>
+            <button type="button" onClick={this.handleClickButtonNeutral}>Neutral</button>
+            <button type="button" onClick={this.handleClickButtonBad}>Bad</button>
+
+            <p>Statictis</p>
+            <ul>
+                <li className={css.item}>Good
+                <p>{this.state.good}</p>
+                </li>
+                <li className={css.item}>Neutral
+                <p>{this.state.neutral}</p>
+                </li>
+                <li className={css.item}>Bad
+                    <p>{this.state.bad}</p>
+                </li>
+            </ul>
+
+        </div>)
 }
 
 }
