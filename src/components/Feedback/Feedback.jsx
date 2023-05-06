@@ -1,5 +1,4 @@
-//import React, { Component } from "react";
-//import css from "./Feedback.module.css";
+import css from "./Feedback.module.css";
 import PropTypes from 'prop-types';
 
 export const Feedback = ({options, onFeedback}) => {
@@ -9,6 +8,7 @@ const stateData = Object.keys(options);
         <div>
             {stateData.map(option => (
                 <button
+                className={css.button_feedback}
                 key={option}
                 type="button"
                 name={option}

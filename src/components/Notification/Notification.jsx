@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
-//import css from './Notificstion.module.css';
+import css from './Notification.module.css';
 
 export const Notification = ({ message }) => {
-  return message && <p >{message}</p>;
+  return message && <p className={css.notification}>{message}</p>;
 };
 
 Notification.propTypes = {

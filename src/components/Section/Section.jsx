@@ -1,10 +1,13 @@
 import PropTypes from "prop-types";
+import css from "./Section.module.css"
 
  const Section = ({title, children}) => {
     return (
-        <section>
-            {title && <h2>{title}</h2>}
+        <section className={css.section}>
+            <div className={css.section_feedback}>
+            {title && <h2 className={css.titile_section}>{title}</h2>}
             {children}
+            </div>
         </section>
     )
 }

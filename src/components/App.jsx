@@ -30,7 +30,7 @@ export class App extends Component {
 
     return (
       <>
-      <Section title="Please leave feedback">
+      <Section title="Please, leave feedback">
       <Feedback 
       options={this.state}
       onFeedback={this.updateCountFeedback}/>
