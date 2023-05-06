@@ -19,7 +19,6 @@ export const Statistics = ({
         <li>
           Bad: <span>{bad}</span>
         </li>
-  
         <li>
           Total: <span>{total}</span>
         </li>

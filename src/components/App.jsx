@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {Feedback} from "./Feedback/Feedback";
-import { Section } from "./Section/Section";
+import Section from "./Section/Section";
 import { Statistics } from "./Statistics/Statistics";
 import { Notification } from "./Notification/Notification";
 
@@ -17,7 +17,7 @@ export class App extends Component {
       ));
   };
   countTotalFeedback = () =>
-    Object.values(this.state).reduce((acc, value) => acc + value, 0);
+    Object.values(this.state).reduce((total, value) => total + value, 0);
 
   countPositiveFeedbackPercentage = () => {
     return this.countTotalFeedback()
